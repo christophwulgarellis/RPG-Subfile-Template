@@ -1,0 +1,24 @@
+A                                      DSPSIZ(24 80 *DS3)
+A                                      INDARA
+
+A          R SFLCTL                    SFLCTL(SFL1)
+A  50                                  SFLCLR
+A  51                                  SFLDSP
+A  52                                  SFLDSPCTL
+A                                      CF03(03 'Exit')
+A                                      SFLSIZ(10)
+A                                      SFLPAG(5)
+A                                      OVERLAY
+
+A                                  2  2'Customer List (Subfile)'
+A                                  4  2'ID'
+A                                  4 10'Name'
+A                                  4 40'Balance'
+
+A          R SFL1                      SFL
+A            CUSTID        5Y 0O  6  2
+A            CUSTNAME     50A  O  6 10
+A            CUSTBAL      10Y 2O  6 40
+
+A                                      SFLEND(*MORE)
+A                                  23 2'F3 = Exit'
